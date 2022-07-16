@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.tamam.foodapplication.R
+import com.tamam.foodapplication.activity.FoodDetailActivity
 import com.tamam.foodapplication.model.Foods
 
 class FoodsAdapter(private val listFoods: ArrayList<Foods>) : RecyclerView.Adapter<FoodsAdapter.ListViewHolder>() {
@@ -29,9 +30,9 @@ class FoodsAdapter(private val listFoods: ArrayList<Foods>) : RecyclerView.Adapt
         Glide.with(holder.itemView).load(dataFoods.posterPath).apply(RequestOptions().override(55, 55)).into(holder.poster_path_foods)
         holder.name_foods.text = dataFoods.name
         holder.itemView.setOnClickListener {
-//            val intent = Intent(holder.itemView.context, MovieDetailActivity::class.java)
-//            intent.putExtra("id", dataFoods.id)
-//            holder.itemView.context.startActivity(intent)
+            val intent = Intent(holder.itemView.context, FoodDetailActivity::class.java)
+            intent.putExtra("id", dataFoods.id)
+            holder.itemView.context.startActivity(intent)
         }
     }
 

@@ -28,5 +28,5 @@ object NetworkConfig {
     fun getServiceFoodList(): FoodListService = getRetrofit().create(FoodListService::class.java)
 
     // Get service from MovieDetailService
-//    fun getServiceDetailFood(): FoodDetailService = getRetrofit().create(FoodDetailService::class.java)
+    fun getServiceDetailFood(): FoodDetailService = getRetrofit().create(FoodDetailService::class.java)
 }
